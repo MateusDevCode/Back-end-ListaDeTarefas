@@ -8,7 +8,8 @@ const app = express();
 
 connectToDataBase();
 
-app.get("/", (req, res) => {
+app.get("/task", (req, res) => {
+    const tasks = [{ description: "Estudar programação", isCompleted: false }];
     res.status(200).send("Hello world");
 });
 
