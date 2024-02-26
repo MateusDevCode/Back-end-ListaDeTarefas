@@ -1,12 +1,14 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const TaskRouter = require("./src/routes/task.routes");
+const cors = require("cors");
 
+const TaskRouter = require("./src/routes/task.routes");
 const connectToDataBase = require("./src/database/mongoose.database");
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 connectToDataBase();
